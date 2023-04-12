@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="12ab733e-a2cf-4a3f-82e7-5b17fcd48a15" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "add-tailwindcss",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/gonzalo/Dev/lluvia-sveltkit/static/auidos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -64,6 +62,7 @@
       <updated>1680790686253</updated>
       <workItem from="1680790691426" duration="508000" />
       <workItem from="1680791209733" duration="6570000" />
+      <workItem from="1681309890882" duration="282000" />
     </task>
     <servers />
   </component>

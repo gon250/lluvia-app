@@ -8,28 +8,36 @@
 
     const data = [
         {
+            id: 1,
             name: '🌧️',
             friendlyName: 'Heavy Rain',
             src: heavyRain,
-            isPlaying: false
+            isPlaying: false,
+            volume: 50
         },
         {
+            id: 2,
             name: '🚗',
             friendlyName: 'Rain from a Car',
             src: rainFromACar,
-            isPlaying: false
+            isPlaying: false,
+            volume: 50
         },
         {
+            id: 3,
             name: '🏖️',
             friendlyName: 'Rain on a Beach',
             src: rainBeach,
-            isPlaying: false
+            isPlaying: false,
+            volume: 50
         },
         {
+            id: 4,
             name: '🌳',
             friendlyName: 'Rain in a Forest',
             src: rainForest,
-            isPlaying: false
+            isPlaying: false,
+            volume: 50
         }
     ];
 
@@ -47,6 +55,9 @@
         const volume = event.target.value / 100;
         // Set volume property of audio element
         audio.volume = volume;
+        // Update volume property of corresponding item in data array
+        const item = data.find(item => item.name === name);
+        item.volume = event.target.value;
     }
 
     function updateButtonLabels() {
@@ -76,6 +87,7 @@
                 <div class="mx-auto h-32 w-32 flex-shrink-0 flex items-center justify-center">
                     <span class="text-8xl">{item.name}</span>
                 </div>
+                <audio src={item.src} id={item.name}></audio>
                 <h3 class="mt-6 text-sm font-medium text-gray-900">{item.friendlyName}</h3>
                 <dl class="mt-1 flex flex-grow flex-col justify-between">
                     <dd class="text-sm text-gray-500">Paradigm Representative</dd>
@@ -83,11 +95,11 @@
                     <dd class="mt-3">
                         <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             🔊
-                            <span class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800">50%</span>
+                            <span class="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800">{item.volume}%</span>
                         </label>
                         <input id="default-range" type="range"
                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-                               min="0" max="100" value="50" on:input={() => setVolume(item.name)}>
+                               min="0" max="100" value={item.volume} on:input={() => setVolume(item.name)}>
                     </dd>
                 </dl>
             </div>
@@ -101,7 +113,11 @@
                                 <path d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 010 1.954l-7.108 4.061A1.125 1.125 0 013 16.811z"
                                       stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                            {#if item.isPlaying}Pause{:else}Play{/if}
+                            {#if item.isPlaying}
+                                Pause
+                            {:else}
+                                Play
+                            {/if}
                         </button>
                     </div>
                 </div>
