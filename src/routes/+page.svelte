@@ -1,5 +1,6 @@
 <script>
-    import { onMount, onDestroy, tick } from 'svelte';
+    import { onMount, tick } from 'svelte';
+
 
     import heavyRain from './sounds/heavy-rain.wav';
     import rainFromACar from './sounds/rain-from-a-car.wav';
@@ -71,10 +72,6 @@
         // Call updateButtonLabels on mount and tick to ensure the DOM has updated
         updateButtonLabels();
         tick();
-    });
-
-    onDestroy(() => {
-        // Cleanup code
     });
 
     export { data };
