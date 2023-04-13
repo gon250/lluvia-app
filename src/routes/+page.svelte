@@ -7,7 +7,7 @@
     import rainBeach from './sounds/rain-beach.wav';
     import rainForest from './sounds/rain-forest.wav';
 
-    const data = [
+    let data = [
         {
             id: 1,
             name: '🌧️',
@@ -44,11 +44,16 @@
 
     function toggleAudio(name) {
         const audio = document.getElementById(name);
-        const item = data.find(item => item.name === name);
         // Toggle paused property of audio element
         audio.paused ? audio.play() : audio.pause();
+
         // Update isPlaying property
-        item.isPlaying = !item.isPlaying;
+        data = data.map(item => {
+            if (item.name === name) {
+                item.isPlaying = !item.isPlaying;
+            }
+            return item;
+        });
     }
 
     function setVolume(name) {
@@ -73,8 +78,6 @@
         updateButtonLabels();
         tick();
     });
-
-    export { data };
 </script>
 
 <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
