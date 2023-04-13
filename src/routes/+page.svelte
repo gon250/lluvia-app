@@ -82,7 +82,7 @@
 
 <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     {#each data as item}
-        <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow {item.isPlaying ? 'shadow-purple-400 hover:shadow-purple-700' : ''}">
             <div class="flex flex-1 flex-col p-8">
                 <div class="mx-auto h-32 w-32 flex-shrink-0 flex items-center justify-center">
                     <span class="text-8xl">{item.name}</span>
@@ -107,7 +107,7 @@
                 <div class="-mt-px flex divide-x divide-gray-200">
                     <div class="-ml-px flex w-0 flex-1">
                         <button on:click={() => toggleAudio(item.name)}
-                                class="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                                class="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-700 hove:text-gray-900 hover:font-bold">
                             {#if item.isPlaying}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
